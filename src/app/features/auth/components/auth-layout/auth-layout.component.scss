@@ -1,0 +1,28 @@
+.login-container {
+  .circle-entity {
+    top: 10%;
+    right: 40%;
+    background: linear-gradient(180deg, #530061 0%, #0d0a30 100%);
+  }
+  .circle-entity-small {
+    bottom: 20%;
+    right: 15%;
+    background: linear-gradient(180deg, #530061 0%, #0d0a30 100%);
+  }
+  .left-content {
+    .left-header {
+      color: #fff;
+      font-size: 5rem;
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
+    }
+    .left-sub {
+      color: #fff;
+      font-size: 2rem;
+      font-style: italic;
+      font-weight: 600;
+      line-height: normal;
+    }
+  }
+}

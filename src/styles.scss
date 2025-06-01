@@ -1,6 +1,13 @@
-@use "tailwindcss";
-// @theme {
-//   --color-primary: #574bf5;
-//   --color-secondary: #d7d9fc;
-//   --color-bg: #f7f6fb;
-// }
+@import "tailwindcss";
+
+html {
+  font-size: 10px;
+}
+
+@theme {
+  --font-poppins: Poppins, sans-serif;
+
+  --color-primary: #574bf5;
+  --color-secondary: #d7d9fc;
+  --color-bg: #f7f6fb;
+}

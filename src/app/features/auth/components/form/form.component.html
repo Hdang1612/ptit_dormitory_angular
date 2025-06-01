@@ -1,0 +1,52 @@
+<div class="login__wrapper">
+  <div class="text-white">
+    <h2 class="mb-2">{{ title }}</h2>
+    <p class="sub-description">{{ description }}</p>
+
+    <form class="form-container" [formGroup]="form" (ngSubmit)="submit()">
+      <div *ngFor="let field of fields" class="form-group mb-4 w-full">
+        <input
+          [type]="field.type"
+          [formControlName]="field.name"
+          [placeholder]="field.placeholder"
+          class="input w-full"
+        />
+        <div
+          *ngIf="
+            form.controls[field.name].invalid &&
+            form.controls[field.name].touched
+          "
+          class="mt-2 text-sm text-red-500"
+        >
+          Trường này không hợp lệ
+        </div>
+      </div>
+      <div *ngIf="isLoginForm" class="mb-4 flex items-center justify-between">
+        <label class="flex cursor-pointer items-center space-x-2 text-white">
+          <input type="checkbox" class="checkbox" />
+          <span>Nhớ mật khẩu</span>
+        </label>
+      </div>
+
+      <button type="submit" class="btn-submit w-full cursor-pointer">
+        {{ submitLabel }}
+      </button>
+      <div *ngIf="isLoginForm" class="flex w-full justify-center">
+        <a routerLink="/forgotpassword" class="text-blue-400 hover:underline"
+          >Quên mật khẩu?</a
+        >
+      </div>
+    </form>
+    <div
+      *ngIf="isLoginForm"
+      class="mt-[2rem] flex w-full justify-center text-[1rem] font-[500]"
+    >
+      Chưa có tài khoản ?<a
+        routerLink="/signup"
+        class="signup-navigate-button ms-3 hover:cursor-pointer hover:underline"
+      >
+        Đăng ký
+      </a>
+    </div>
+  </div>
+</div>
