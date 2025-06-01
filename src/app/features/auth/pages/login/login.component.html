@@ -1,10 +1,8 @@
-<app-auth-layout>
-  <app-auth-form
-    [title]="'Đăng nhập'"
-    [description]="'Vui lòng nhập thông tin tài khoản'"
-    [submitLabel]="'Đăng nhập'"
-    [fields]="loginFields"
-    (onSubmit)="handleLogin($event)"
-    [isLoginForm]="true"
-  ></app-auth-form>
-</app-auth-layout>
+<app-auth-form
+  [title]="'Đăng nhập'"
+  [description]="'Vui lòng nhập thông tin tài khoản'"
+  [submitLabel]="'Đăng nhập'"
+  [fields]="loginFields"
+  (onSubmit)="handleLogin($event)"
+  [isLoginForm]="true"
+></app-auth-form>

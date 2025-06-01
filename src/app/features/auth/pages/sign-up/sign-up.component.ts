@@ -1,10 +1,9 @@
 import { Component } from '@angular/core';
-import { AuthLayoutComponent } from '../../components/auth-layout/auth-layout.component';
 import { FormComponent } from '../../components/form/form.component';
 import { FormsModule, Validators } from '@angular/forms';
 @Component({
   selector: 'app-sign-up',
-  imports: [AuthLayoutComponent, FormComponent, FormsModule],
+  imports: [FormComponent, FormsModule],
   templateUrl: './sign-up.component.html',
   styleUrl: './sign-up.component.scss',
 })

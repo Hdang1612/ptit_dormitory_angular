@@ -1,0 +1,38 @@
+<div class="sidebar bg-bg px-[4rem] py-[2rem]">
+  <div class="sidebar_header flex items-center justify-start pb-5">
+    <img
+      src="/avatar.jpg"
+      alt=""
+      class="me-4 h-[6rem] w-[6rem] rounded-full border"
+    />
+    <div class="sidebar_header_info flex flex-col text-black">
+      <p class="text-[2rem] font-semibold">To Hai Dang</p>
+      <div
+        class="bg-secondary flex w-fit justify-center rounded-3xl border-0 px-3 py-1"
+      >
+        Admin
+      </div>
+    </div>
+  </div>
+  <div class="sidebar_title flex flex-col items-center">
+    <p class="text-primary text-[2.4rem] font-[600] uppercase">
+      Phòng trọ PTIT
+    </p>
+    <div class="bg-primary mt-1 mb-[3rem] h-[2px] w-[80%]"></div>
+  </div>
+  <div class="sidebar_nav space-y-2 text-black">
+    <a
+      *ngFor="let item of menuItems"
+      [ngClass]="{
+        'bg-secondary text-black': isActive(item.path),
+        'text-black': !isActive(item.path),
+      }"
+      [routerLink]="item.path"
+      class="hover:bg-secondary flex cursor-pointer items-center space-x-5 rounded-full px-5 py-4 transition"
+    >
+      <!-- <i class="pi pi-{{ item.icon }}"></i> -->
+      <div class="bg-primary h-[4rem] w-[4rem] rounded-full"></div>
+      <span class="text-[1.6rem] font-[600]">{{ item.label }}</span>
+    </a>
+  </div>
+</div>
