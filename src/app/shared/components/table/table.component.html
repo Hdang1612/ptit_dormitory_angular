@@ -1,0 +1,34 @@
+<div class="table-container">
+  <table class="styled-table">
+    <thead>
+      <tr>
+        <th *ngFor="let col of columns" [style.width]="col.width">
+          {{ col.header }}
+        </th>
+      </tr>
+    </thead>
+    <tbody *ngIf="!loading; else loadingTpl">
+      <tr *ngFor="let row of dataSource">
+        <td *ngFor="let col of columns">
+          <ng-container [ngSwitch]="col.type">
+            <span *ngSwitchCase="'date'">{{
+              row[col.field] | date: "dd/MM/yyyy"
+            }}</span>
+            <!-- <span *ngSwitchCase="'text'">{{ row[col.field] }}</span> -->
+            <span *ngSwitchDefault>{{ row[col.field] }}</span>
+          </ng-container>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <ng-template #loadingTpl>
+    <tr>
+      <td [attr.colspan]="columns.length">Loading...</td>
+    </tr>
+  </ng-template>
+
+  <div *ngIf="showPagination">
+    <!-- Pagination control -->
+  </div>
+</div>

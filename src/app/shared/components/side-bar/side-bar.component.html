@@ -1,10 +1,12 @@
 <div class="sidebar bg-bg px-[4rem] py-[2rem]">
   <div class="sidebar_header flex items-center justify-start pb-5">
-    <img
-      src="/avatar.jpg"
-      alt=""
-      class="me-4 h-[6rem] w-[6rem] rounded-full border"
-    />
+    <a routerLink="/profile">
+      <img
+        src="/avatar.jpg"
+        alt=""
+        class="me-4 h-[6rem] w-[6rem] cursor-pointer rounded-full border"
+      />
+    </a>
     <div class="sidebar_header_info flex flex-col text-black">
       <p class="text-[2rem] font-semibold">To Hai Dang</p>
       <div
@@ -30,8 +32,8 @@
       [routerLink]="item.path"
       class="hover:bg-secondary flex cursor-pointer items-center space-x-5 rounded-full px-5 py-4 transition"
     >
-      <!-- <i class="pi pi-{{ item.icon }}"></i> -->
-      <div class="bg-primary h-[4rem] w-[4rem] rounded-full"></div>
+      <mat-icon>{{ item.icon }}</mat-icon>
+      <!-- <div class="bg-primary h-[4rem] w-[4rem] rounded-full"></div> -->
       <span class="text-[1.6rem] font-[600]">{{ item.label }}</span>
     </a>
   </div>

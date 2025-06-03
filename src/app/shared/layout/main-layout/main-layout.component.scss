@@ -15,14 +15,16 @@
 }
 
 .header {
-  height: 60px;
-  display: flex;
-  align-items: center;
-  padding: 0 16px;
-  border-bottom: 1px solid #e5e7eb;
+  color: #574bf5;
+  font-size: 4.43438rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  border-bottom: 1px solid #574bf5;
+  margin-bottom: 2rem;
 }
 
 .content {
   flex: 1;
-  padding: 24px;
+  // padding: 24px;
 }
