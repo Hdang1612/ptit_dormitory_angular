@@ -7,15 +7,23 @@ import { ForgotPasswordComponent } from './features/auth/pages/forgot-password/f
 import { MainLayoutComponent } from './shared/layout/main-layout/main-layout.component';
 import { AuthLayoutComponent } from './shared/layout/auth-layout/auth-layout.component';
 import { UserProfileComponent } from './features/user/pages/user-profile/user-profile.component';
+import { AreaGeneralComponent } from './features/area/pages/area-general/area-general.component';
+import { StudentManageComponent } from './features/user/pages/student-manage/student-manage.component';
+import { ContractComponent } from './features/contract/pages/contract/contract.component';
+import { RegisterContractComponent } from './features/contract/pages/register-contract/register-contract.component';
+import { ShifScheduleManageComponent } from './features/shift-schedule/pages/shif-schedule-manage/shif-schedule-manage.component';
 export const routes: Routes = [
   {
     path: '',
     component: MainLayoutComponent,
     children: [
       { path: '', component: HomeComponent },
-      { path: 'rooms', component: LoginComponent },
+      { path: 'rooms', component: AreaGeneralComponent },
+      { path: 'students', component: StudentManageComponent },
+      { path: 'contract', component: ContractComponent },
+      { path: 'register-list', component: RegisterContractComponent },
+      { path: 'shift-manage', component: ShifScheduleManageComponent },
       { path: 'profile', component: UserProfileComponent },
-      { path: 'student', component: UserProfileComponent },
 
       //   { path: 'users', component: UsersComponent },
     ],

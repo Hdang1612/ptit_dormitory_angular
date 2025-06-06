@@ -1,0 +1,29 @@
+<div class="relative my-4 flex w-fit flex-col gap-2">
+  <!-- <label class="text-sm font-medium">{{ label }}</label> -->
+
+  <div class="select relative">
+    <select
+      class="focus:ring-primary bg-secondary cursor-pointer appearance-none rounded-full px-5 py-3 pr-10 focus:ring-2 focus:outline-none"
+      (mousedown)="onMouseDown()"
+      (focus)="onFocus()"
+      (change)="onChange($event)"
+      (blur)="onBlur()"
+    >
+      <option disabled selected hidden>{{ placeholder }}</option>
+      <option
+        class="p-4 align-middle"
+        *ngFor="let option of options"
+        [value]="option.value"
+      >
+        {{ option.label }}
+      </option>
+    </select>
+
+    <mat-icon
+      class="pointer-events-none absolute top-1 right-1 transform transition-transform duration-300 ease-in-out"
+      [ngClass]="{ 'rotate-180': isOpen }"
+    >
+      arrow_drop_down
+    </mat-icon>
+  </div>
+</div>

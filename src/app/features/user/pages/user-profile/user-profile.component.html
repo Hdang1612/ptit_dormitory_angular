@@ -4,3 +4,9 @@
   [loading]="loading"
 ></app-table>
 <app-button [label]="'Xác nhận'" [onClick]="handleConfirm" />
+<app-select
+  [label]="'Thành phố'"
+  [options]="cityOptions"
+  [placeholder]="'Chọn thành phố...'"
+  (selected)="handleSelectChange($event)"
+></app-select>
