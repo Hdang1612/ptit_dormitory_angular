@@ -26,7 +26,7 @@ export class MainLayoutComponent implements OnInit, OnDestroy {
   }
 
   updateHeader(url: string) {
-    const cleanPath = url.split('?')[0].split('#')[0]; // bỏ query, fragment nếu có
+    const cleanPath = url.split('?')[0].split('#')[0]; 
     const matched = MENU_ITEMS.find((item) => item.path === cleanPath);
     this.header = matched?.label ?? 'Trang không xác định';
   }

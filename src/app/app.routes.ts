@@ -12,6 +12,7 @@ import { StudentManageComponent } from './features/user/pages/student-manage/stu
 import { ContractComponent } from './features/contract/pages/contract/contract.component';
 import { RegisterContractComponent } from './features/contract/pages/register-contract/register-contract.component';
 import { ShifScheduleManageComponent } from './features/shift-schedule/pages/shif-schedule-manage/shif-schedule-manage.component';
+import { NotFoundPageComponent } from './features/not-found-page/not-found-page.component';
 export const routes: Routes = [
   {
     path: '',
@@ -37,4 +38,5 @@ export const routes: Routes = [
       { path: 'forgotpassword', component: ForgotPasswordComponent },
     ],
   },
+  { path: '**', component: NotFoundPageComponent },
 ];
