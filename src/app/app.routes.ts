@@ -18,7 +18,7 @@ export const routes: Routes = [
     path: '',
     component: MainLayoutComponent,
     children: [
-      { path: '', component: HomeComponent },
+      { path: '', component: HomeComponent, title: 'Home Page' },
       { path: 'rooms', component: AreaGeneralComponent },
       { path: 'students', component: StudentManageComponent },
       { path: 'contract', component: ContractComponent },

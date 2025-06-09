@@ -28,7 +28,49 @@
     </tr>
   </ng-template>
 
-  <div *ngIf="showPagination">
-    <!-- Pagination control -->
+  <div
+    *ngIf="showPagination"
+    class="pagination mt-4 flex items-center justify-center gap-2"
+  >
+    <button
+      (click)="prevPage()"
+      [disabled]="currentPage === 1"
+      class="rounded bg-gray-200 px-3 py-1"
+    >
+      Trước
+    </button>
+    <ng-container *ngIf="totalPages > 1">
+      <button
+        *ngFor="let page of visiblePages; let i = index"
+        (click)="goToPage(page)"
+        [class.bg-red-500]="currentPage === page"
+        [class.text-white]="currentPage === page"
+        class="mx-1 h-8 w-8 rounded bg-gray-200"
+      >
+        {{ page }}
+      </button>
+      <ng-container *ngIf="visiblePages.length > 0">
+        <span
+          *ngIf="visiblePages.length > 1 && visiblePages[1] > 2"
+          class="mx-1"
+          >...</span
+        >
+        <span
+          *ngIf="
+            visiblePages.length > 2 &&
+            visiblePages[visiblePages.length - 2] < totalPages - 1
+          "
+          class="mx-1"
+          >...</span
+        >
+      </ng-container>
+    </ng-container>
+    <button
+      (click)="nextPage()"
+      [disabled]="currentPage === totalPages"
+      class="rounded bg-gray-200 px-3 py-1"
+    >
+      Sau
+    </button>
   </div>
 </div>
