@@ -35,40 +35,29 @@
     <button
       (click)="prevPage()"
       [disabled]="currentPage === 1"
-      class="rounded bg-gray-200 px-3 py-1"
+      class="cursor-pointer rounded bg-gray-200 px-3 py-1"
     >
       Trước
     </button>
     <ng-container *ngIf="totalPages > 1">
-      <button
-        *ngFor="let page of visiblePages; let i = index"
-        (click)="goToPage(page)"
-        [class.bg-red-500]="currentPage === page"
-        [class.text-white]="currentPage === page"
-        class="mx-1 h-8 w-8 rounded bg-gray-200"
-      >
-        {{ page }}
-      </button>
-      <ng-container *ngIf="visiblePages.length > 0">
-        <span
-          *ngIf="visiblePages.length > 1 && visiblePages[1] > 2"
-          class="mx-1"
-          >...</span
+      <ng-container *ngFor="let page of visiblePages; let i = index">
+        <ng-container *ngIf="i > 0 && page - visiblePages[i - 1] > 1">
+          <span class="mx-1">...</span>
+        </ng-container>
+        <button
+          (click)="goToPage(page)"
+          [class.bg-primary]="currentPage === page"
+          [class.text-white]="currentPage === page"
+          class="mx-1 h-8 w-8 cursor-pointer rounded bg-gray-200"
         >
-        <span
-          *ngIf="
-            visiblePages.length > 2 &&
-            visiblePages[visiblePages.length - 2] < totalPages - 1
-          "
-          class="mx-1"
-          >...</span
-        >
+          {{ page }}
+        </button>
       </ng-container>
     </ng-container>
     <button
       (click)="nextPage()"
       [disabled]="currentPage === totalPages"
-      class="rounded bg-gray-200 px-3 py-1"
+      class="cursor-pointer rounded bg-gray-200 px-3 py-1"
     >
       Sau
     </button>
