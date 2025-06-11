@@ -1,4 +1,11 @@
-import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
+import {
+  Component,
+  Input,
+  input,
+  Output,
+  EventEmitter,
+  OnInit,
+} from '@angular/core';
 import {
   FormGroup,
   FormControl,
@@ -22,7 +29,7 @@ interface FormField {
   styleUrl: './form.component.scss',
 })
 export class FormComponent implements OnInit {
-  @Input() title: string = '';
+  title = input('');
   @Input() description: string = '';
   @Input() submitLabel: string = 'Submit';
   @Input() isLoginForm: boolean = true;

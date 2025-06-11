@@ -5,9 +5,15 @@ import {
 } from '../../../../shared/components/table/table.component';
 import { ButtonComponent } from '../../../../shared/components/button/button.component';
 import { SelectComponent } from '../../../../shared/components/select/select.component';
+import { SearchBarComponent } from '../../../../shared/components/search-bar/search-bar.component';
 @Component({
   selector: 'app-user-profile',
-  imports: [TableComponent, ButtonComponent, SelectComponent],
+  imports: [
+    TableComponent,
+    ButtonComponent,
+    SelectComponent,
+    SearchBarComponent,
+  ],
   templateUrl: './user-profile.component.html',
   styleUrl: './user-profile.component.scss',
 })

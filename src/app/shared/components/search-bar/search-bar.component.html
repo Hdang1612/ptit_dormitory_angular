@@ -1,1 +1,12 @@
-<p>search-bar works!</p>
+<div
+  class="flex w-full max-w-md items-center rounded border bg-white px-3 py-2"
+>
+  <mat-icon class="mr-2 text-gray-500">search</mat-icon>
+  <input
+    type="text"
+    class="flex-1 bg-transparent outline-none"
+    placeholder="Tìm kiếm..."
+    [(ngModel)]="searchText"
+    (input)="onSearchChange($event)"
+  />
+</div>
